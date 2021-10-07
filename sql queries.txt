@@ -17,3 +17,23 @@ as both their first and last characters.Your result cannot contain duplicates.
 SELECT DISTINCT CITY
 FROM STATION
 WHERE LOWER(SUBSTR(CITY,1,1)) IN ('i','o','u','e','a') AND LOWER(SUBSTR(CITY,-1)) IN ('i','o','u','e','a')
+
+
+4) Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.
+SELECT DISTINCT CITY
+FROM STATION 
+WHERE LOWER(SUBSTR(CITY,1,1)) NOT  IN('i','o','e','a','u')
+
+
+
+5)Query the list of CITY names from STATION that do not end with vowels. Your result cannot contain duplicates.
+SELECT DISTINCT CITY
+FROM STATION 
+WHERE LOWER(SUBSTR(CITY,-1)) NOT IN('a','i','e','u','o')
+
+6)Query the list of CITY names from STATION that either
+ do not start with vowels or do not end with vowels.
+ Your result cannot contain duplicates.
+SELECT DISTINCT CITY 
+FROM STATION
+WHERE LOWER(SUBSTR(CITY,-1)) NOT IN('a','o','i','e','u') OR LOWER(SUBSTR(CITY,1,1)) NOT IN('a','o','i','e','u')
